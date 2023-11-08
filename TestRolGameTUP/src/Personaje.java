@@ -1,22 +1,17 @@
-public class Personaje {
+public class Personaje extends Character{
 
-    private int level;
-    private int str;
-    private int dex;
-    private int def;
-    private int spd;
-    private int health;
-    private String tipo;
-    private String name;
+    public int str;
+    public int dex;
+    public int def;
+    public int spd;
+    public String tipo;
 
-    public Personaje(int level, int str, int dex, int def, int spd, int health, String name, String tipo) {
-        this.level = level;
+    public Personaje(int level, int health, String name, int str, int dex, int def, int spd, String tipo) {
+        super(level, health, name);
         this.str = str;
         this.dex = dex;
         this.def = def;
         this.spd = spd;
-        this.health = health;
-        this.name = name;
         this.tipo = tipo;
     }
 
@@ -26,22 +21,6 @@ public class Personaje {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public int getStr() {
@@ -74,13 +53,5 @@ public class Personaje {
 
     public void setSpd(int spd) {
         this.spd = spd;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
     }
 }
