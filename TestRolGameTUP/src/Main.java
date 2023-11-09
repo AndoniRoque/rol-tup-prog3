@@ -8,6 +8,7 @@ public class Main {
         System.out.println("Welcome: ");
 
         String input = "0";
+        List<Personaje> party_1 = new ArrayList<>();
 
         while(!input.equals("5")) {
             System.out.println("     1 . Start.");
@@ -22,8 +23,13 @@ public class Main {
             input = scanner.nextLine();
 
             if(input.equals("1")){
-                GenerarPersonajes();
+                for(int i = 0; i < 3; i++) {
+                    party_1.addAll(GenerarPersonajes());
+                }
+
             }
+            System.out.println("Press Enter to continue...");
+            scanner.nextLine();
         }
     }
 
@@ -58,18 +64,23 @@ public class Main {
 
             System.out.println("Enter character's name: ");
             String name = scanner.nextLine();
+            scanner.nextLine();
 
             System.out.println("Enter character's strength: ");
             int str = scanner.nextInt();
+            scanner.nextLine();
 
             System.out.println("Enter character's dexterity: ");
             int dex = scanner.nextInt();
+            scanner.nextLine();
 
             System.out.println("Enter character's defence: ");
             int def = scanner.nextInt();
+            scanner.nextLine();
 
             System.out.println("Enter character's speed: ");
             int spd = scanner.nextInt();
+            scanner.nextLine();
 
             Personaje character1 = new Personaje(10, 100, name, str, dex, def, spd, tipo);
 
@@ -82,7 +93,10 @@ public class Main {
             System.out.println("     Speed: " + character1.getSpd());
             System.out.println("---------------------------------------------------------------------------");
             party_1.add(character1);
+            // TODO: un ciclo while que le pregunte al usuario si esta conforme con el personaje creado o quiere reingresar los stats.
+            System.out.println("Press enter to create another character...");
+            scanner.nextLine();
 
-        return party_1;
+            return party_1;
         }
     }
