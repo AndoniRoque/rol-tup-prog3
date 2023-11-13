@@ -58,13 +58,14 @@ public class Main {
                 } else if (tipo.equals("3") || tipo.equals("ELFO")) {
                     tipo = "Elfo";
                     select_tipo = 1;
+                } else {
+                    System.out.println("Por favor ingrese una opción válida.");
                 }
             }
 
 
             System.out.println("Enter character's name: ");
             String name = scanner.nextLine();
-            scanner.nextLine();
 
             System.out.println("Enter character's strength: ");
             int str = scanner.nextInt();
